@@ -1,0 +1,5 @@
+dapr run --app-id input-service --app-port 5001 --app-protocol http --dapr-http-port 4001 --config src/Dapr/components/tracing.yaml --components-path src/Dapr/components node src/Dapr/input-service/src/index.js
+dapr run --app-id processing-service --app-port 5002 --app-protocol http --dapr-http-port 4002 --config src/Dapr/components/tracing.yaml --components-path src/Dapr/components py src/Dapr/processing-service/src/app.py
+dapr run --app-id output-service --app-port 5003 --app-protocol http --dapr-http-port 4003 --config src/Dapr/components/tracing.yaml --components-path src/Dapr/components src\Dapr\output-service\run.bat
+
+docker run -e APPINSIGHTS_INSTRUMENTATIONKEY=<instrumentation-key> -e APPINSIGHTS_LIVEMETRICSSTREAMAUTHENTICATIONAPIKEY=<key> -d -p 55678:55678 daprio/dapr-localforwarder:latest

@@ -1,0 +1,12 @@
+apiVersion: dapr.io/v1alpha1
+kind: Component
+metadata:
+  name: corona-notifications
+  namespace: default
+spec:
+  type: bindings.azure.signalr
+  metadata:
+  - name: connectionString
+    value: Endpoint=https://hasoub-corona-notifications.service.signalr.net;AccessKey=PpdKcpKrr+FmCQ0gFvnNDS3X54BfbYQmpj9NU+TVapw=;Version=1.0;
+  - name: hub #optional - can be specified in the notification's metadata object
+    value: outbreaks

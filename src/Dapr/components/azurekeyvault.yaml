@@ -1,0 +1,16 @@
+#apiVersion: dapr.io/v1alpha1
+#kind: Component
+#metadata:
+  #name: azurekeyvault
+  #namespace: default
+#spec:
+  #type: secretstores.azure.keyvault
+  #metadata:
+  #- name: vaultName
+    #value: hasoub-corona-keys
+  #- name: spnTenantId
+    #value: "<tenant-id>"
+  #- name: spnClientId
+    #value: "<client-id>"
+  #- name: spnCertificateFile
+    #value : "certificate.pfx"
